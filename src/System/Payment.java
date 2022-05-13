@@ -45,8 +45,13 @@ public class Payment extends JFrame{ //Fifth
 	add(textField);
 	
         table = new JTable();
-	table.setBounds(45, 329, 766, 87);
-	add(table);
+        table.setBackground(Color.WHITE);
+	table.setBounds(45, 315, 770, 87);
+        
+        JScrollPane pane = new JScrollPane(table);
+	pane.setBounds(45, 320, 790, 100);
+        pane.setBackground(Color.WHITE);
+        add(pane);
        	
 	JButton Show = new JButton("SHOW");
 	Show.setFont(new Font("Montserrat", Font.PLAIN, 17));
@@ -63,17 +68,17 @@ public class Payment extends JFrame{ //Fifth
 		
 	FlightCode = new JLabel("PNR CODE");
 	FlightCode.setFont(new Font("Montserrat", Font.PLAIN, 13));
-	FlightCode.setBounds(80, 298, 108, 26);
+	FlightCode.setBounds(92, 298, 108, 26);
 	add(FlightCode);
 		
 	Capacity = new JLabel("PAID AMOUNT");
 	Capacity.setFont(new Font("Montserrat", Font.PLAIN, 13));
-	Capacity.setBounds(190, 298, 92, 26);
+	Capacity.setBounds(237, 298, 92, 26);
 	add(Capacity);
 		
 	Classcode = new JLabel("PAY DATE");
 	Classcode.setFont(new Font("Montserrat", Font.PLAIN, 13));
-	Classcode.setBounds(320, 298, 101, 26);
+	Classcode.setBounds(406, 298, 70, 26);
 	add(Classcode);
 		
 		
@@ -84,12 +89,12 @@ public class Payment extends JFrame{ //Fifth
 		
 	JLabel Cardno = new JLabel("CARD NUMBER");
 	Cardno.setFont(new Font("Montserrat", Font.PLAIN, 13));
-	Cardno.setBounds(430, 298, 101, 26);
+	Cardno.setBounds(544, 298, 101, 26);
 	add(Cardno);
 		
 	JLabel Phoneno = new JLabel("PHONE NUMBER");
 	Phoneno.setFont(new Font("Montserrat", Font.PLAIN, 13));
-	Phoneno.setBounds(575, 298, 120, 26);
+	Phoneno.setBounds(698, 298, 120, 26);
 	add(Phoneno);
 	
         setVisible(true);

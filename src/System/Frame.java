@@ -50,8 +50,8 @@ public class Frame extends JFrame{
         
         JLabel AirlineManagementSystem = new JLabel("VIETNAM AIRLINE - REACH FURTHER");
 	AirlineManagementSystem.setForeground(Color.YELLOW);
-        AirlineManagementSystem.setFont(new Font("Montserrat", Font.PLAIN, 36));
-	AirlineManagementSystem.setBounds(550, 55, 1000, 55);
+        AirlineManagementSystem.setFont(new Font("Montserrat", Font.PLAIN, 45));
+	AirlineManagementSystem.setBounds(400, 35, 1000, 55);
 	NewLabel.add(AirlineManagementSystem);
 		
 		
@@ -68,8 +68,8 @@ public class Frame extends JFrame{
 	JMenuItem ReservationDetails = new JMenuItem("CUSTOMER DETAILS");
 	AirlineSystem.add(ReservationDetails);
 		
-	JMenuItem PassengerDetails = new JMenuItem("JOURNEY DETAILS");
-	AirlineSystem.add(PassengerDetails);
+	JMenuItem Schedule = new JMenuItem("SCHEDULE");
+	AirlineSystem.add(Schedule);
 		
 	JMenuItem SectorDetails_1 = new JMenuItem("PAYMENT DETAILS");
 	AirlineSystem.add(SectorDetails_1);
@@ -77,18 +77,8 @@ public class Frame extends JFrame{
 	JMenuItem Cancellation = new JMenuItem("CANCELLATION");
 	AirlineSystem.add(Cancellation);
 		
-	JMenu Ticket = new JMenu("TICKET");
-        Ticket.setForeground(Color.RED);
-	menuBar.add(Ticket);
-		
-        JMenu List = new JMenu("LIST");
-        List.setForeground(Color.BLUE);
-	menuBar.add(List);
-		
-	JMenu Misc = new JMenu("MISC");
-        Misc.setForeground(Color.RED);
-	menuBar.add(Misc);
-        
+	JMenuItem Checking = new JMenuItem("CHECK");
+	AirlineSystem.add(Checking);	 
 		
 	FlightDetails.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
@@ -106,10 +96,10 @@ public class Frame extends JFrame{
             }
 	});
 		
-        PassengerDetails.addActionListener(new ActionListener(){
+        Schedule.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
                 try {
-                    new Journey_Details();
+                    new Schedule();
                 } catch (Exception e) {
                     e.printStackTrace();
 		}
@@ -131,8 +121,14 @@ public class Frame extends JFrame{
                 new Cancel();
             }
 	});
-		
-        setSize(1950,1090);
+	
+        Checking.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                new Checking();
+            }
+	});
+        
+        setSize(1920,1090);
 	setVisible(true);
     }
 }

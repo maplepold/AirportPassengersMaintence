@@ -66,48 +66,39 @@ public class Customer extends JFrame{ //Third Frame
             textField_3 = new JTextField();
             textField_3.setBounds(200, 165, 150, 27);
             add(textField_3);
-            
-            JLabel Address = new JLabel("ADDRESS");
-            Address.setFont(new Font("Montserrat", Font.PLAIN, 17));
-            Address.setBounds(60, 210, 150, 27);
-            add(Address);
+                        		
+            JLabel Nationality = new JLabel("NATIONALITY");
+            Nationality.setFont(new Font("Montserrat", Font.PLAIN, 17));
+            Nationality.setBounds(60, 210, 150, 27);
+            add(Nationality);
 			
             textField_4 = new JTextField();
             textField_4.setBounds(200, 210, 150, 27);
             add(textField_4);
-            		
-            JLabel Nationality = new JLabel("NATIONALITY");
-            Nationality.setFont(new Font("Montserrat", Font.PLAIN, 17));
-            Nationality.setBounds(60, 255, 150, 27);
-            add(Nationality);
-			
-            textField_5 = new JTextField();
-            textField_5.setBounds(200, 255, 150, 27);
-            add(textField_5);
 	
             JLabel Gender = new JLabel("GENDER");
             Gender.setFont(new Font("Montserrat", Font.PLAIN, 17));
-            Gender.setBounds(60, 300, 150, 27);
+            Gender.setBounds(60, 255, 150, 27);
             add(Gender);
 		
             JRadioButton NewRadioButton = new JRadioButton("MALE");
             NewRadioButton.setBackground(Color.WHITE);
-            NewRadioButton.setBounds(200, 300, 70, 27);
+            NewRadioButton.setBounds(200, 255, 70, 27);
             add(NewRadioButton);
 	
             JRadioButton Female = new JRadioButton("FEMALE");
             Female.setBackground(Color.WHITE);
-            Female.setBounds(280, 300, 70, 27);
+            Female.setBounds(280, 255, 70, 27);
             add(Female);
             
-            JLabel Phno = new JLabel("PH NO");
-            Phno.setFont(new Font("Montserrat", Font.PLAIN, 17));
-            Phno.setBounds(60, 345, 150, 27);
-            add(Phno);
+            JLabel Phone = new JLabel("PHONE");
+            Phone.setFont(new Font("Montserrat", Font.PLAIN, 17));
+            Phone.setBounds(60, 310, 150, 27);
+            add(Phone);
 			
-            textField_6 = new JTextField();
-            textField_6.setBounds(200, 345, 150, 27);
-            add(textField_6);
+            textField_5 = new JTextField();
+            textField_5.setBounds(200, 310, 150, 27);
+            add(textField_5);
 	
             setVisible(true);
 	
@@ -135,13 +126,12 @@ public class Customer extends JFrame{ //Third Frame
                     String name = textField_1.getText();
                     String passport_No = textField_2.getText();
                     String pnr_no = textField_3.getText();
-                    String address =  textField_4.getText();
-                    String nationality = textField_5.getText();
+                    String nationality = textField_4.getText();
                     
                    
                    
                     String gender = null;
-                    String ph_no = textField_6.getText();
+                    String phone = textField_5.getText();
                     
                     if(NewRadioButton.isSelected()){
                         gender = "male";
@@ -152,7 +142,7 @@ public class Customer extends JFrame{ //Third Frame
                     
                     try {
                         Connector c = new Connector();
-                        String str = "INSERT INTO passenger values( '"+pnr_no+"', '"+address+"', '"+nationality+"','"+name+"', '"+gender+"', '"+ph_no+"','"+passport_No+"', '"+f_code+"')";
+                        String str = "INSERT INTO passenger values( '"+pnr_no+"','"+nationality+"','"+name+"', '"+gender+"', '"+phone+"','"+passport_No+"', '"+f_code+"')";
                         
                         c.s.executeUpdate(str);
                         JOptionPane.showMessageDialog(null,"Customer Added");
